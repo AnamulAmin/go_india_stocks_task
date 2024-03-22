@@ -21,15 +21,27 @@ export default function Dashboard() {
 
   // Effect hook for detecting screen size changes
   useEffect(() => {
+    // Get the sideMenu element
     const sideMenu = document.getElementById("sideMenu");
+
+    // Add event listener to the sideMenu element
     sideMenu.addEventListener("click", function (event) {
+      // Get the clicked element
       const currentElement = event.target;
+
+      // Remove background color from all list items
       sideMenu.querySelectorAll("li").forEach((elem) => {
         elem.classList.remove("bg-blue-950");
       });
+
+      // Check if the clicked element is a list item (LI)
       if (currentElement.tagName === "LI") {
+        // Add background color to the clicked list item
         currentElement.classList.add("bg-blue-950");
-      } else if (currentElement.tagName === "P") {
+      }
+      // Check if the clicked element is a paragraph (P)
+      else if (currentElement.tagName === "P") {
+        // Add background color to the parent list item of the clicked paragraph
         currentElement.parentElement.classList.add("bg-blue-950");
       }
     });
@@ -139,7 +151,7 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content Section */}
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 sm:gap-8 flex-grow p-4 h-screen overflow-auto bg-white pt-20 sm:pt-4">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 sm:gap-8 flex-grow p-4 h-screen overflow-auto bg-white pt-20 md:pt-4">
         {/* Conditional Rendering of Dashboard Areas based on screen size and active area */}
         {isDesktop ? (
           <>

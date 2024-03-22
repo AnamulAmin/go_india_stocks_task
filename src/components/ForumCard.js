@@ -10,7 +10,7 @@ import { IoShareSocialOutline } from "react-icons/io5"; // Importing Share icon 
 const ForumCard = ({ data }) => {
   const { user_name, date, likes, views, comments, image, description } = data; // Destructuring props
   return (
-    <div className="mb-8 sm:mt-8 flex flex-col sm:flex-row rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg sm:p-8">
+    <div className="mb-8 md:mt-8 flex flex-col sm:flex-row rounded-xl border border-gray-100 p-4 text-left text-gray-600 shadow-lg sm:p-8">
       {/* User Image */}
       <Image
         className="mr-5 block  text-left align-middle h-16 w-16 border rounded-full"
