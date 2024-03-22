@@ -1,7 +1,8 @@
 const fourmData = [
   {
     user_name: "JohnDoe123",
-    description: "This is an amazing post!",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     date: "1 day ago",
     likes: "2k",
     views: "2k",
@@ -10,7 +11,8 @@ const fourmData = [
   },
   {
     user_name: "JaneSmith456",
-    description: "I can't believe I've never thought of this before!",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     date: "3 days ago",
     likes: "3k",
     views: "3k",
@@ -19,7 +21,8 @@ const fourmData = [
   },
   {
     user_name: "CoolGuy007",
-    description: "Wow, mind blown! Great content.",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     date: "5 days ago",
     likes: "5k",
     views: "5k",
@@ -28,7 +31,8 @@ const fourmData = [
   },
   {
     user_name: "SocialButterfly",
-    description: "This is exactly what I needed to see today!",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     date: "2 days ago",
     likes: "4k",
     views: "4k",

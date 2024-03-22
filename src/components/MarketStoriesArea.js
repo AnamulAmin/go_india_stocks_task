@@ -7,7 +7,7 @@ function MarketStoriesArea(props) {
   return (
     <div className="col-span-full sm:col-span-1">
       {/* Button for Market Stories */}
-      <button className="hover:bg-stone-200 rounded-md bg-stone-200 p-4 text-center text-3xl font-bold text-red-500 hidden sm:flex gap-2 mb-5 ">
+      <button className="hover:bg-stone-200 rounded-md bg-stone-200 p-4 text-center text-3xl font-bold text-red-500 hidden md:flex gap-2 mb-5 ">
         Market Stories
       </button>
       {/* Mapping through market stories data and rendering story cards */}

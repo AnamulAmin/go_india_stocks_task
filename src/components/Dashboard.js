@@ -21,12 +21,25 @@ export default function Dashboard() {
 
   // Effect hook for detecting screen size changes
   useEffect(() => {
+    const sideMenu = document.getElementById("sideMenu");
+    sideMenu.addEventListener("click", function (event) {
+      const currentElement = event.target;
+      sideMenu.querySelectorAll("li").forEach((elem) => {
+        elem.classList.remove("bg-blue-950");
+      });
+      if (currentElement.tagName === "LI") {
+        currentElement.classList.add("bg-blue-950");
+      } else if (currentElement.tagName === "P") {
+        currentElement.parentElement.classList.add("bg-blue-950");
+      }
+    });
+
     // Function to track screen size
     const trackScreen = () => {
       const screen = window.innerWidth;
 
       // Checking if screen size is greater than 640px
-      if (screen > 640) {
+      if (screen > 768) {
         setIsDesktop(true); // Set isDesktop to true
       } else {
         setIsDesktop(false); // Set isDesktop to false
@@ -48,6 +61,31 @@ export default function Dashboard() {
   // Rendering the Dashboard component
   return (
     <div className="flex relative z-[1] gap-4 bg-stone-100">
+      {/* Mobile Menu Buttons */}
+      <div className="flex md:hidden fixed top-0 w-full ">
+        {/* Discussion Forum Button */}
+        <button
+          className={`text-white p-4 flex-grow ${
+            activeAreaName === "discussion_forum"
+              ? "bg-blue-950 border-b-2 border-red-400"
+              : "bg-blue-800"
+          }`}
+          onClick={() => setActiveAreaName("discussion_forum")}
+        >
+          Discussion Forum
+        </button>
+        {/* Market Stories Button */}
+        <button
+          className={`text-white p-4 flex-grow ${
+            activeAreaName === "market_stories"
+              ? "bg-blue-950 border-b-2 border-red-400"
+              : "bg-blue-800"
+          }`}
+          onClick={() => setActiveAreaName("market_stories")}
+        >
+          Market Stories
+        </button>
+      </div>
       {/* Menu Section */}
       <div
         className={`${
@@ -75,7 +113,10 @@ export default function Dashboard() {
           </div>
         </header>
         {/* Menu Items */}
-        <ul className="menu gap-3 mt-2 overflow-hidden text-sm sm:text-md">
+        <ul
+          className="menu gap-3 mt-2 overflow-hidden text-sm sm:text-md"
+          id="sideMenu"
+        >
           {/* Discussion Forum */}
           <li className="flex items-center justify-between py-2 px-4 bg-blue-950">
             <p className="flex gap-2 items-center">
@@ -98,33 +139,7 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content Section */}
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 sm:gap-8 flex-grow p-4 h-screen overflow-auto bg-white relative pt-20 sm:pt-4">
-        {/* Mobile Menu Buttons */}
-        <div className="flex sm:hidden fixed top-0 w-full ">
-          {/* Discussion Forum Button */}
-          <button
-            className={`text-white p-4 flex-grow ${
-              activeAreaName === "discussion_forum"
-                ? "bg-blue-950 border-b-2 border-red-400"
-                : "bg-blue-800"
-            }`}
-            onClick={() => setActiveAreaName("discussion_forum")}
-          >
-            Discussion Forum
-          </button>
-          {/* Market Stories Button */}
-          <button
-            className={`text-white p-4 flex-grow ${
-              activeAreaName === "market_stories"
-                ? "bg-blue-950 border-b-2 border-red-400"
-                : "bg-blue-800"
-            }`}
-            onClick={() => setActiveAreaName("market_stories")}
-          >
-            Market Stories
-          </button>
-        </div>
-
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 sm:gap-8 flex-grow p-4 h-screen overflow-auto bg-white pt-20 sm:pt-4">
         {/* Conditional Rendering of Dashboard Areas based on screen size and active area */}
         {isDesktop ? (
           <>

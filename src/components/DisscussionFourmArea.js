@@ -7,7 +7,7 @@ function DisscussionFourmArea() {
   return (
     <div className="col-span-2">
       {/* Button for Discussion Forum */}
-      <button className="hover:bg-stone-200 rounded-md bg-stone-200 p-4 text-center text-3xl font-bold text-red-500 hidden sm:flex gap-2 ">
+      <button className="hover:bg-stone-200 rounded-md bg-stone-200 p-4 text-center text-3xl font-bold text-red-500 hidden md:flex gap-2 ">
         Discussion Forum
       </button>
       {/* Mapping through forum data and rendering forum cards */}
